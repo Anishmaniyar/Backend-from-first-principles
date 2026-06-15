@@ -1,0 +1,13 @@
+{
+  "name": "02-basicauth",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "express": "^4.21.0",
+    "nodemon": "^3.1.14"
+  }
+}
