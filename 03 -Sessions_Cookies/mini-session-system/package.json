@@ -1,0 +1,17 @@
+{
+  "name": "mini-session-system",
+  "version": "1.0.0",
+  "description": "see how sessions work and store session id without any libraries like express generator or redis ",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
+}
