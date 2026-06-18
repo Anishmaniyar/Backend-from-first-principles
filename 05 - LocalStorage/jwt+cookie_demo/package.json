@@ -1,14 +1,13 @@
 {
-  "name": "json-demo",
+  "name": "package.json",
   "version": "1.0.0",
-  "description": "a basic app to understand how the json wweb tokens actually work",
   "main": "server.js",
-  "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "test": "start node server.js"
   },
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
