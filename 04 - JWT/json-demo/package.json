@@ -1,0 +1,16 @@
+{
+  "name": "json-demo",
+  "version": "1.0.0",
+  "description": "a basic app to understand how the json wweb tokens actually work",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3"
+  }
+}
