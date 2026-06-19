@@ -1,0 +1,16 @@
+{
+  "name": "rbac-demo",
+  "version": "1.0.0",
+  "description": "a app to focus on building and understanding rbac from first principles",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.11.0"
+  }
+}
