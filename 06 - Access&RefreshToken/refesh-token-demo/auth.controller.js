@@ -54,6 +54,54 @@ export const loginUser = async (req, res) => {
   }
 };
 
-export const getProfile = async (req, res) => {};
-export const getrefreshToken = async (req, res) => {};
-export const logoutUser = async (req, res) => {};
+export const getProfile = async (req, res) => {
+  return res.status(200).json("User profile accessed successfully");
+};
+
+export const getrefreshToken = async (req, res) => {
+  const refreshToken = req.cookies.refreshToken;
+
+  if (!refreshToken) {
+    return res.status(401).json({ error: "Refresh token missing" });
+  }
+
+  jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
+    if (err) {
+      return res
+        .status(403)
+        .json({ error: "Invalid or expired refresh token" });
+    }
+
+    const user = {
+      id: "0001111",
+      email: "anish@gmail.com",
+      password: "anish12345",
+    };
+
+    const tokensAccess = generateAccessToken(user);
+    const tokensRefresh = generateRefreshToken(user);
+
+    res.cookie("refreshToken", tokensRefresh, {
+      httpOnly: true,
+      secure: false,
+      sameSite: "lax",
+      maxAge: 7 * 24 * 60 * 60 * 1000,
+    });
+
+    return res.json({ accessToken: tokensAccess });
+  });
+};
+
+export const logoutUser = async (req, res) => {
+  const refreshToken = req.cookies.refreshToken;
+
+  res.clearCookie("refreshToken", {
+    httpOnly: true,
+    secure: false,
+    sameSite: "lax",
+  });
+
+  return res
+    .status(200)
+    .json({ message: "Logged out successfully. Cookie cleared!" });
+};

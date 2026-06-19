@@ -15,4 +15,4 @@ router.get("/profile", authenticatedUser, getProfile);
 router.get("/refresh", getrefreshToken);
 router.post("/logout", logoutUser);
 
-export default router; // Ensure you export the router at the bottom!
+export default router;
